@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech History</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='history.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Interview History</h1>
+        <div class="history-list">
+            {% for speech in speeches %}
+            <div class="history-box">
+                <p><strong>Time:</strong> {{ speech.time }}</p>
+                <p><strong>Speech:</strong> {{ speech.text }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        <a href="/">⬅ Back to Home</a>
+    </div>
+</body>
+</html>

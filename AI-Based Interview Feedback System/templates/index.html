@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Interview Feedback</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1> AI-Based Interview Feedback System</h1>
+        <button id="recordBtn">Start Recording</button>
+        <button id="stopBtn" disabled>Stop Recording</button>
+        <p id="status">Click 'Start' and begin speaking...</p>
+
+        <div id="liveTextBox">
+            <h3>Live Speech-to-Text:</h3>
+            <div id="liveText"></div>
+        </div>
+
+        <div id="results">
+            <h2>Latest Interview Result</h2>
+            <p id="transcribedText" class="highlight"></p>
+
+            <div class="feedback-container">
+                <div class="feedback-box"><h4>Sentiment</h4><p id="sentiment"></p></div>
+                <div class="feedback-box"><h4>Fluency</h4><p id="fluency"></p></div>
+                <div class="feedback-box"><h4>Vocabulary</h4><p id="vocabulary"></p></div>
+                <div class="feedback-box"><h4>Confidence</h4><p id="confidence"></p></div>
+                <div class="feedback-box"><h4>Repeated Words</h4><p id="repeatedWords"></p></div>
+                <div class="feedback-box"><h4>Hesitations</h4><p id="hesitations"></p></div>
+                <div class="feedback-box"><h4>Grammar Issues</h4><p id="grammarIssues"></p></div>
+                <div class="feedback-box"><h4>Suggestions</h4><p id="suggestions"></p></div>
+            </div>
+        </div>
+
+        <a href="/history">View Interview History</a>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
